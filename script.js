@@ -76,7 +76,7 @@ function turnTile(evt) {
         noSelected++;
     }
     else if (noSelected === 1) {
-        noSelected++;   // not actually necessary but seems more intuitively correct to have this line.
+        noSelected++;   // not actually necessary but more intuitively correct to have this line.
         secondTile.symbol = tiles[tileNo];
         checkSymbol(secondTile.symbol, selected.id);
         secondTile.position = parseInt(tileNo);
@@ -152,7 +152,7 @@ function endGame() {
     stats.append(newrow);
     guesses = 0;
     // average score beneath table
-    let avg = totGuesses / gamesWon;
+    let avg = Math.round((totGuesses / gamesWon) *10)/10;
     average.innerText = "Average guesses/game: " + avg;
     counter.innerText = "Pairs found: " + score;
     counter2.innerText = "Guesses: " + guesses;
